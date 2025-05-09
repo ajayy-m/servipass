@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servipass - Home</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="home.html">
+        <img src="logo1.png" alt="Servipass Logo" class="nav-logo" />
+      </a>
+      <a href="home.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="nav-right">
+    <a href="dashboard.html" class="dashboard-link">Account Info</a>
+    <button id="logout-btn">Logout</button>
+  </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 style="font-size: 64px; font-weight: 600; margin: 0; color: #111;">
+          Your Home services powered by our Subscriptions
+        </h1>
+        <p style="font-size: 24px; color: #555; margin: 16px 0 40px;">
+          A venture that focuses on providing subscription-based services to homes and businesses
+        </p>
+        <a href="Services.html" class="animated-link">
+          View our Products! <span class="arrow">&gt;</span>
+        </a>
+      </div>
+      <img src="illust.png" alt="Home Service Illustration" class="hero-image" />
+    </div>
+  </section>
+  
+  
+  <!-- Firebase Logout Script -->
+  <script type="module">
+    import { auth } from './firebase.js';
+    import { signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        await signOut(auth);
+        window.location.href = 'index.html'; // Redirect after logout
+      } catch (error) {
+        console.error("Logout failed:", error.message);
+      }
+    });
+  </script>
+
+</body>
+</html>

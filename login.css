@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Montserrat:wght@400&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  margin: 0;
+  background: url('Buymate.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo styling */
+.logo-wrapper {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#logo {
+  width: 220px;
+  height: auto;
+}
+
+/* Container for login/register box */
+.auth-container {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Heading styles */
+.auth-container h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.auth-container input[type="text"],
+.auth-container input[type="email"],
+.auth-container input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* Buttons */
+.auth-container button {
+  background-color: #5ea2ec;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.auth-container button:hover {
+  background-color: #2d7acd;
+}
+
+/* Link to switch between login/register */
+.auth-container .switch-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.auth-container .switch-link a {
+  color: #3a90eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-container .switch-link a:hover {
+  color: #2963a1;
+}
