@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servipass - Services</title>
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="home.html">
+        <img src="logo1.png" alt="Servipass Logo" class="nav-logo" />
+      </a>
+      <a href="home.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <button id="logout-btn">Logout</button>
+  </nav>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    
+    <!-- Title and Subtitle -->
+    <div class="services-content">
+      <h1 class="services-title">Our Services</h1>
+      <p class="services-subtitle">We offer a wide range of professional services that satisfy your needs</p>
+    </div>
+  
+    <!-- Service Cards Grid -->
+    <div class="services-grid">
+  
+      <!-- Service Card 1 -->
+      <div class="card">
+        <h2>Plumbing</h2>
+        <p>Professional plumbing services for repairs, installations, and maintenance of all your home water systems.</p>
+        <ul>
+          <li>✓ Leak detection & repair</li>
+          <li>✓ Fixture installation</li>
+          <li>✓ Drain cleaning</li>
+        </ul>
+        <a href="pricing.html" class="animated-link">Book Service <span class="arrow">&gt;</span></a>
+      </div>
+  
+      <!-- Service Card 2 -->
+      <div class="card">
+        <h2>Electrical</h2>
+        <p>Certified electricians for all your home electrical needs, from minor repairs to complete rewiring.</p>
+        <ul>
+          <li>✓ Circuit installation</li>
+          <li>✓ Panel upgrades</li>
+          <li>✓ Lighting installation</li>
+        </ul>
+        <a href="pricing.html" class="animated-link">Book Service <span class="arrow">&gt;</span></a>
+      </div>
+  
+      <!-- Service Card 3 -->
+      <div class="card">
+        <h2>Cleaning</h2>
+        <p>Professional cleaning services to keep your home sparkling clean and healthy for you and your family.</p>
+        <ul>
+          <li>✓ Regular home cleaning</li>
+          <li>✓ Deep cleaning</li>
+          <li>✓ Move-in/move-out cleaning</li>
+        </ul>
+        <a href="pricing.html" class="animated-link">Book Service <span class="arrow">&gt;</span></a>
+      </div>
+  
+      <!-- Additional Service Cards (for 8 total services) -->
+      <!-- Card 4 -->
+      <div class="card">
+        <h2>Gardening</h2>
+        <p>Complete gardening services, from lawn maintenance to landscape design and planting.</p>
+        <ul>
+          <li>✓ Lawn care</li>
+          <li>✓ Landscape design</li>
+          <li>✓ Tree trimming</li>
+        </ul>
+        <a href="pricing.html" class="animated-link">Book Service <span class="arrow">&gt;</span></a>
+      </div>
+  
+      <!-- Card 5 -->
+      <div class="card">
+        <h2>Painting</h2>
+        <p>Interior and exterior painting to refresh your home with a clean, vibrant look.</p>
+        <ul>
+          <li>✓ Wall painting</li>
+          <li>✓ Exterior painting</li>
+          <li>✓ Color consultation</li>
+        </ul>
+        <a href="pricing.html" class="animated-link">Book Service <span class="arrow">&gt;</span></a>
+      </div>
+  
+      <!-- Card 6 -->
+      <div class="card">
+        <h2>HVAC</h2>
+        <p>Heating, ventilation, and air conditioning services to keep your home comfortable all year round.</p>
+        <ul>
+          <li>✓ Air conditioning installation</li>
+          <li>✓ Furnace repair</li>
+          <li>✓ Duct cleaning</li>
+        </ul>
+        <a href="pricing.html" class="animated-link">Book Service <span class="arrow">&gt;</span></a>
+      </div>
+  
+      <!-- Card 7 -->
+      <div class="card">
+        <h2>Roofing</h2>
+        <p>Reliable roofing services for repairs, installations, and inspections to protect your home.</p>
+        <ul>
+          <li>✓ Roof repair</li>
+          <li>✓ New roof installation</li>
+          <li>✓ Roof inspection</li>
+        </ul>
+        <a href="pricing.html" class="animated-link">Book Service <span class="arrow">&gt;</span></a>
+      </div>
+  
+      <!-- Card 8 -->
+      <div class="card">
+        <h2>Security</h2>
+        <p>Professional security systems and services to keep your home safe and secure.</p>
+        <ul>
+          <li>✓ CCTV installation</li>
+          <li>✓ Alarm systems</li>
+          <li>✓ Smart home integration</li>
+        </ul>
+        <a href="pricing.html" class="animated-link">Book Service <span class="arrow">&gt;</span></a>
+      </div>
+  
+    </div>
+  
+  </section>
+
+  <!-- Firebase Logout Script -->
+  <script type="module">
+    import { auth } from './firebase.js';
+    import { signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        await signOut(auth);
+        window.location.href = 'index.html';
+      } catch (error) {
+        console.error("Logout failed:", error.message);
+      }
+    });
+  </script>
+
+</body>
+</html>
