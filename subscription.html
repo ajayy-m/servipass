@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servipass - Subscription</title>
+  <link rel="stylesheet" href="subscription.css" />
+  <style>
+    .payment-box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      margin: 20px auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group label {
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .input-group input {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .payment-box button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .payment-box button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="home.html"><img src="logo1.png" alt="Servipass Logo" class="nav-logo" /></a>
+      <a href="home.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <button id="logout-btn">Logout</button>
+  </nav>
+
+  <!-- Subscription Page Content -->
+  <section class="subscription-section">
+    <h1>You have chosen your Subscription! Proceed to payment?</h1>
+
+
+    <!-- Plan Information -->
+    <div class="subscription-plans">
+      <div class="plan-option" id="selected-plan-info">
+        <h3 id="plan-title"></h3>
+        <p id="plan-price"></p>
+        <button class="select-plan" onclick="showPaymentForm()">Proceed to Payment</button>
+      </div>
+    </div>
+
+    <!-- Mock Payment Form -->
+    <div id="payment-form" style="display: none;" class="payment-box">
+      <h2>Payment Details</h2>
+      <div class="input-group">
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" />
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label for="expiry-date">Expiry Date</label>
+          <input type="text" id="expiry-date" placeholder="MM/YY" />
+        </div>
+        <div class="input-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123" />
+        </div>
+      </div>
+      <button onclick="completePayment()">Proceed with Payment</button>
+    </div>
+  </section>
+
+  <script>
+    // Function to get query parameter from URL
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Display selected plan information based on URL query parameter
+    const selectedPlan = getQueryParam("plan");
+
+    // Plan info
+    const planInfo = {
+      Basic: { name: "Basic", price: "₹ 850 /month" },
+      "Basic+": { name: "Basic+", price: "₹ 1799 /month" },
+      Premium: { name: "Premium", price: "₹ 2899 /month" },
+      Enterprise: { name: "Enterprise", price: "Contact Us" },
+    };
+
+    const planTitle = document.getElementById("plan-title");
+    const planPrice = document.getElementById("plan-price");
+
+    // Validate and display plan
+    if (planInfo[selectedPlan]) {
+      planTitle.innerText = planInfo[selectedPlan].name;
+      planPrice.innerText = planInfo[selectedPlan].price;
+    } 
+    
+
+    // Show payment form
+    function showPaymentForm() {
+      document.getElementById("payment-form").style.display = "block";
+    }
+
+    // Mock payment processing
+    function completePayment() {
+      alert("Payment successful for the plan!")
+      window.location.href = "";
+    }
+  </script>
+
+</body>
+</html>
