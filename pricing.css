@@ -1,0 +1,229 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Montserrat:wght@400&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.nav-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-left a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 8px;
+}
+
+.nav-left a:hover,
+.nav-left .active {
+  background: rgba(0, 0, 0, 0.1);
+  color: #5190d3;
+}
+
+.nav-logo {
+  height: 40px;
+  margin-right: 20px; 
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Logout Button */
+#logout-btn {
+  background: rgb(204, 80, 80);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: auto; 
+  max-width: 120px;  
+  box-sizing: border-box; 
+}
+
+#logout-btn:hover {
+  background: rgb(127, 53, 53);
+}
+
+
+
+.pricing-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.pricing-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+.pricing-header p {
+  font-size: 1.1rem;
+  color: #666;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 3rem;
+}
+
+.pricing-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.plan-card {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s;
+  border: 2px solid transparent;
+  backdrop-filter: blur(8px);
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+}
+
+.plan-card h2 {
+  font-size: 1.6rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  color: #2a2a2a;
+}
+
+.price span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #666;
+}
+
+.billing {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.plan-card ul {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.plan-card ul li {
+  padding: 0.3rem 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.get-started {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.get-started:hover {
+  background-color: #0056b3;
+}
+
+
+.most-popular {
+  border-color: #ed7575;
+  position: relative;
+}
+
+.most-popular::before {
+  content: "Most Popular";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ed7575;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricing-header h1 {
+    font-size: 2rem;
+  }
+
+  .plan-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
+}

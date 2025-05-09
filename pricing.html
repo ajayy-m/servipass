@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servipass - Pricing</title>
+  <link rel="stylesheet" href="pricing.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="home.html"><img src="logo1.png" alt="Servipass Logo" class="nav-logo" /></a>
+      <a href="home.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <button id="logout-btn">Logout</button>
+  </nav>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section">
+    <div class="pricing-header">
+      <h1>Our Pricing Plans</h1>
+      <p>Choose the plan that works best for your home service needs</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Basic Plan -->
+      <div class="plan-card">
+        <h2>Basic</h2>
+        <p class="price">₹ 850 <span>/month</span></p>
+        <p class="billing">Billed monthly, cancel anytime</p>
+        <ul>
+          <li>✓ 2 service calls per month</li>
+          <li>✓ Access to basic services</li>
+          <li>✓ Standard response (48h)</li>
+          <li>✓ Email support</li>
+          <li>× Weekend availability</li>
+        </ul>
+        <a href="subscription.html" class="get-started">Get Started</a>
+      </div>
+
+      <!-- Basic+ Plan -->
+      <div class="plan-card most-popular">
+        <h2>Basic+</h2>
+        <p class="price">₹ 1799 <span>/month</span></p>
+        <p class="billing">Billed monthly, cancel anytime</p>
+        <ul>
+          <li>✓ 4 service calls per month</li>
+          <li>✓ Access to all services</li>
+          <li>✓ Faster response time (36h)</li>
+          <li>✓ Email & phone support</li>
+          <li>✓ Priority scheduling</li>
+          <li>× Weekend availability</li>
+        </ul>
+        <a href="subscription.html" class="get-started">Get Started</a>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="plan-card">
+        <h2>Premium</h2>
+        <p class="price">₹ 2899 <span>/month</span></p>
+        <p class="billing">Billed monthly, cancel anytime</p>
+        <ul>
+          <li>✓ 8 service calls per month</li>
+          <li>✓ Access to all services</li>
+          <li>✓ Fast response time (24h)</li>
+          <li>✓ Email & phone support</li>
+          <li>✓ Priority scheduling</li>
+          <li>✓ Weekend availability</li>
+        </ul>
+        <a href="subscription.html" class="get-started">Get Started</a>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="plan-card">
+        <h2>Enterprise</h2>
+        <p class="price">Contact us</p>
+        <p class="billing">Billed monthly, cancel anytime</p>
+        <ul>
+          <li>✓ Unlimited service calls</li>
+          <li>✓ Full access to all services</li>
+          <li>✓ Emergency response (4h)</li>
+          <li>✓ 24/7 priority support</li> 
+          <li>✓ Dedicated manager</li>
+          <li>✓ Weekend & holiday coverage</li>
+        </ul>
+        <a href="subscription.html" class="get-started">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Firebase Logout Script -->
+  <script type="module">
+    import { auth } from './firebase.js';
+    import { signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        await signOut(auth);
+        window.location.href = 'index.html';
+      } catch (error) {
+        console.error("Logout failed:", error.message);
+      }
+    });
+  </script>
+
+</body>
+</html>
